@@ -1,0 +1,43 @@
+CREATE TABLE photos (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	date DATE,
+	title TEXT,
+	post_id INT(11) DEFAULT NULL,
+	PRIMARY KEY(id),
+	UNIQUE KEY(date)
+);
+
+CREATE TABLE album (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(100) NOT NULL,
+	text VARCHAR(100) NOT NULL,
+	photo_id INT(11) DEFAULT NULL,
+	PRIMARY KEY(id),
+	UNIQUE KEY(name)
+);
+
+CREATE TABLE post (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	date DATE,
+	slug VARCHAR(100) NOT NULL,
+	title TEXT,
+	card_id INT(11) DEFAULT NULL,
+	PRIMARY KEY(id),
+	UNIQUE KEY(date)
+);
+
+CREATE TABLE category (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	name VARCHAR(100) NOT NULL,
+	text VARCHAR(100) NOT NULL,
+	PRIMARY KEY(id),
+	UNIQUE KEY(text)
+);
+
+CREATE TABLE user (
+	user_id INT(11) NOT NULL AUTO_INCREMENT,
+	user_name VARCHAR(50) NOT NULL,
+	user_password VARCHAR(256) NOT NULL,
+	PRIMARY KEY(user_id),
+	UNIQUE KEY(user_name)
+);
